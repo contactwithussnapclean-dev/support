@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapClean Privacy Policy - Photo Gallery Cleanup App</title>
+    <meta name="description" content="SnapClean Privacy Policy - Learn how we protect your privacy and handle your data when using our photo gallery cleanup app.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://contactwithussnapclean-dev.github.io/support/privacy.html">
+    <meta property="og:title" content="SnapClean Privacy Policy - Photo Gallery Cleanup App">
+    <meta property="og:description" content="SnapClean Privacy Policy - Learn how we protect your privacy and handle your data when using our photo gallery cleanup app.">
+    <meta property="og:image" content="https://contactwithussnapclean-dev.github.io/support/icons/Icon-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="SnapClean App Icon">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://contactwithussnapclean-dev.github.io/support/privacy.html">
+    <meta property="twitter:title" content="SnapClean Privacy Policy - Photo Gallery Cleanup App">
+    <meta property="twitter:description" content="SnapClean Privacy Policy - Learn how we protect your privacy and handle your data when using our photo gallery cleanup app.">
+    <meta property="twitter:image" content="https://contactwithussnapclean-dev.github.io/support/icons/Icon-512.png">
+    <meta property="twitter:image:alt" content="SnapClean App Icon">
+    
+    <!-- Additional meta tags -->
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="SnapClean Privacy">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #FFFFFF;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(26, 26, 26, 0.95) 50%, rgba(0, 0, 0, 0.9) 100%);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/images/noise_512.png');
+            background-size: 512px 512px;
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 8px;
+            z-index: 1000;
+        }
+
+        .lang-btn {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .lang-btn.active {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            z-index: 1000;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #96CEB4);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .content-section h1 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        .content-section h2 {
+            font-size: 1.5rem;
+            margin: 25px 0 15px 0;
+            color: #4ECDC4;
+            border-bottom: 2px solid rgba(78, 205, 196, 0.3);
+            padding-bottom: 8px;
+        }
+
+        .content-section h3 {
+            font-size: 1.2rem;
+            margin: 20px 0 10px 0;
+            color: #96CEB4;
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+        }
+
+        .content-section ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .content-section li {
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .last-updated {
+            text-align: center;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+
+        .contact-info {
+            background: rgba(78, 205, 196, 0.1);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-info h3 {
+            color: #4ECDC4;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            margin-bottom: 8px;
+        }
+
+        .email-link {
+            color: #4ECDC4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .email-link:hover {
+            color: #96CEB4;
+            text-decoration: underline;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(78, 205, 196, 0.5), transparent);
+            margin: 40px 0;
+            border: none;
+        }
+
+        .language-content {
+            display: none;
+        }
+
+        .language-content.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
+            .content-section h1 {
+                font-size: 1.8rem;
+            }
+            
+            .content-section h2 {
+                font-size: 1.3rem;
+            }
+            
+            .language-switcher {
+                top: 15px;
+                right: 15px;
+            }
+            
+            .back-btn {
+                top: 15px;
+                left: 15px;
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-btn">← Back to Support</a>
+    
+    <div class="language-switcher">
+        <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="switchLanguage('tr')">TR</button>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo">SnapClean</div>
+            <div class="subtitle">Privacy Policy</div>
+        </div>
+
+        <!-- English Content -->
+        <div id="en-content" class="language-content active">
+            <div class="content-section">
+                <h1>Privacy Policy</h1>
+                <div class="last-updated">Last updated: December 2024</div>
+                
+                <p>SnapClean respects your privacy. This Privacy Policy explains how we handle your information when you use our app.</p>
+                
+                <h2>1. Data Processing</h2>
+                <ul>
+                    <li>SnapClean processes your photos locally on your device.</li>
+                    <li>We do not upload, store, or share your photos on any server.</li>
+                </ul>
+                
+                <h2>2. Data We Collect</h2>
+                <ul>
+                    <li>We do not collect personal information, photos, or gallery data.</li>
+                    <li>The app may store basic settings/preferences on your device only.</li>
+                </ul>
+                
+                <h2>3. Third-Party Services</h2>
+                <ul>
+                    <li>SnapClean does not integrate advertising or analytics SDKs that collect personal data.</li>
+                </ul>
+                
+                <div class="contact-info">
+                    <h3>4. Contact</h3>
+                    <p>If you have questions about this policy, you can reach us at:</p>
+                    <p>📧 <a href="mailto:contactwithus.snapclean@gmail.com" class="email-link">contactwithus.snapclean@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Turkish Content -->
+        <div id="tr-content" class="language-content">
+            <div class="content-section">
+                <h1>Gizlilik Politikası</h1>
+                <div class="last-updated">Son güncelleme: Aralık 2024</div>
+                
+                <p>SnapClean gizliliğinize önem verir. Bu politika, uygulamamızı kullanırken bilgilerinizin nasıl işlendiğini açıklar.</p>
+                
+                <h2>1. Veri İşleme</h2>
+                <ul>
+                    <li>SnapClean, fotoğraflarınızı yalnızca cihazınızda işler.</li>
+                    <li>Fotoğraflarınız hiçbir şekilde sunuculara yüklenmez, saklanmaz veya paylaşılmaz.</li>
+                </ul>
+                
+                <h2>2. Toplanan Veriler</h2>
+                <ul>
+                    <li>Kişisel bilgiler, fotoğraflar veya galeri verileri tarafımızca toplanmaz.</li>
+                    <li>Uygulama yalnızca temel ayarları ve tercihleri cihazınızda saklayabilir.</li>
+                </ul>
+                
+                <h2>3. Üçüncü Taraf Servisler</h2>
+                <ul>
+                    <li>SnapClean, kişisel veri toplayan reklam veya analiz SDK'ları içermez.</li>
+                </ul>
+                
+                <div class="contact-info">
+                    <h3>4. İletişim</h3>
+                    <p>Bu politika hakkında sorularınız olursa bize şu adresten ulaşabilirsiniz:</p>
+                    <p>📧 <a href="mailto:contactwithus.snapclean@gmail.com" class="email-link">contactwithus.snapclean@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchLanguage(lang) {
+            // Hide all content
+            document.querySelectorAll('.language-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected content
+            document.getElementById(lang + '-content').classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
