@@ -78,6 +78,69 @@
             text-align: center;
             color: white;
             margin-bottom: 40px;
+            position: relative;
+        }
+
+        .language-switcher {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            gap: 8px;
+        }
+
+        .lang-btn {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lang-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.1) 0%, 
+                rgba(255, 255, 255, 0.05) 50%, 
+                rgba(255, 255, 255, 0.1) 100%);
+            border-radius: 12px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .lang-btn:hover::before {
+            opacity: 1;
+        }
+
+        .lang-btn.active {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+        }
+
+        .lang-btn span {
+            position: relative;
+            z-index: 1;
         }
 
         .header h1 {
@@ -638,41 +701,45 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>📱 SnapClean Support</h1>
-            <p>Where messy galleries find peace ✨</p>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">🇺🇸 English</button>
+                <button class="lang-btn" data-lang="tr">🇹🇷 Türkçe</button>
+            </div>
+            <h1 data-translate="title">📱 SnapClean Support</h1>
+            <p data-translate="subtitle">Where messy galleries find peace ✨</p>
         </div>
 
         <div class="main-content">
             <div class="app-info">
-                <h3>About SnapClean</h3>
-                <p>SnapClean is an intuitive photo gallery cleanup app that helps you organize your memories with simple swipe gestures. Clean up your photo gallery with ease and keep only what matters most.</p>
+                <h3 data-translate="about-title">About SnapClean</h3>
+                <p data-translate="about-description">SnapClean is an intuitive photo gallery cleanup app that helps you organize your memories with simple swipe gestures. Clean up your photo gallery with ease and keep only what matters most.</p>
                 <div class="version-info">Version 1.0.1+2</div>
             </div>
 
             <div class="section">
-                <h2>🚀 Getting Started</h2>
+                <h2 data-translate="getting-started">🚀 Getting Started</h2>
                 <div class="feature-grid">
                     <div class="feature-card">
-                        <h4>📸 Choose Your Cleanup Mode</h4>
-                        <p>Select from four cleanup modes: Recently Added photos, Old Photos, Surprise Me (random selection), or Select Album to clean specific folders.</p>
+                        <h4 data-translate="cleanup-mode">📸 Choose Your Cleanup Mode</h4>
+                        <p data-translate="cleanup-mode-desc">Select from four cleanup modes: Recently Added photos, Old Photos, Surprise Me (random selection), or Select Album to clean specific folders.</p>
                     </div>
                     <div class="feature-card">
-                        <h4>👆 Swipe to Clean</h4>
-                        <p>Use intuitive swipe gestures to quickly review and organize your photos. Swipe right to keep, left to delete, or tap for more options.</p>
+                        <h4 data-translate="swipe-clean">👆 Swipe to Clean</h4>
+                        <p data-translate="swipe-clean-desc">Use intuitive swipe gestures to quickly review and organize your photos. Swipe right to keep, left to delete, or tap for more options.</p>
                     </div>
                     <div class="feature-card">
-                        <h4>🎯 Smart Organization</h4>
-                        <p>SnapClean helps you identify duplicate photos, blurry images, and screenshots to make cleanup decisions easier.</p>
+                        <h4 data-translate="smart-org">🎯 Smart Organization</h4>
+                        <p data-translate="smart-org-desc">SnapClean helps you identify duplicate photos, blurry images, and screenshots to make cleanup decisions easier.</p>
                     </div>
                     <div class="feature-card">
-                        <h4>🔒 Privacy First</h4>
-                        <p>All photo processing happens locally on your device. Your photos never leave your phone unless you explicitly choose to share them.</p>
+                        <h4 data-translate="privacy-first">🔒 Privacy First</h4>
+                        <p data-translate="privacy-first-desc">All photo processing happens locally on your device. Your photos never leave your phone unless you explicitly choose to share them.</p>
                     </div>
                 </div>
             </div>
 
             <div class="section">
-                <h2>❓ Frequently Asked Questions</h2>
+                <h2 data-translate="faq-title">❓ Frequently Asked Questions</h2>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
@@ -751,7 +818,7 @@
             </div>
 
             <div class="section">
-                <h2>🔧 Troubleshooting</h2>
+                <h2 data-translate="troubleshooting-title">🔧 Troubleshooting</h2>
                 
                 <ul class="troubleshooting-list">
                     <li>
@@ -778,7 +845,7 @@
             </div>
 
             <div class="section">
-                <h2>📱 System Requirements</h2>
+                <h2 data-translate="system-req-title">📱 System Requirements</h2>
                 <div class="feature-grid">
                     <div class="feature-card">
                         <h4>iOS Requirements</h4>
@@ -796,7 +863,7 @@
             </div>
 
             <div class="section">
-                <h2>📞 Contact Support</h2>
+                <h2 data-translate="contact-title">📞 Contact Support</h2>
                 <div class="contact-info">
                     <h3>Need More Help?</h3>
                     <p>We're here to help you get the most out of SnapClean. Reach out to us through any of these channels:</p>
@@ -826,14 +893,14 @@
             </div>
 
             <div class="section">
-                <h2>📄 Privacy & Terms</h2>
+                <h2 data-translate="privacy-terms-title">📄 Privacy & Terms</h2>
                 <p>SnapClean is committed to protecting your privacy. All photo processing happens locally on your device. We do not collect, store, or transmit your personal photos or data.</p>
                 <p>For more information about our privacy practices and terms of service, please contact us at <a href="mailto:contactwithus.snapclean@gmail.com">contactwithus.snapclean@gmail.com</a>.</p>
             </div>
         </div>
 
         <div class="back-to-app">
-            <a href="index.html"><span>← Back to SnapClean</span></a>
+            <a href="index.html"><span data-translate="back-to-app">← Back to SnapClean</span></a>
         </div>
     </div>
 
@@ -864,6 +931,88 @@
                         block: 'start'
                     });
                 }
+            });
+        });
+
+        // Language switching functionality
+        const translations = {
+            en: {
+                'title': '📱 SnapClean Support',
+                'subtitle': 'Where messy galleries find peace ✨',
+                'about-title': 'About SnapClean',
+                'about-description': 'SnapClean is an intuitive photo gallery cleanup app that helps you organize your memories with simple swipe gestures. Clean up your photo gallery with ease and keep only what matters most.',
+                'getting-started': '🚀 Getting Started',
+                'cleanup-mode': '📸 Choose Your Cleanup Mode',
+                'cleanup-mode-desc': 'Select from four cleanup modes: Recently Added photos, Old Photos, Surprise Me (random selection), or Select Album to clean specific folders.',
+                'swipe-clean': '👆 Swipe to Clean',
+                'swipe-clean-desc': 'Use intuitive swipe gestures to quickly review and organize your photos. Swipe right to keep, left to delete, or tap for more options.',
+                'smart-org': '🎯 Smart Organization',
+                'smart-org-desc': 'SnapClean helps you identify duplicate photos, blurry images, and screenshots to make cleanup decisions easier.',
+                'privacy-first': '🔒 Privacy First',
+                'privacy-first-desc': 'All photo processing happens locally on your device. Your photos never leave your phone unless you explicitly choose to share them.',
+                'faq-title': '❓ Frequently Asked Questions',
+                'troubleshooting-title': '🔧 Troubleshooting',
+                'system-req-title': '📱 System Requirements',
+                'contact-title': '📞 Contact Support',
+                'privacy-terms-title': '📄 Privacy & Terms',
+                'back-to-app': '← Back to SnapClean'
+            },
+            tr: {
+                'title': '📱 SnapClean Destek',
+                'subtitle': 'Dağınık galerilerin huzur bulduğu yer ✨',
+                'about-title': 'SnapClean Hakkında',
+                'about-description': 'SnapClean, fotoğraf galerinizi basit kaydırma hareketleriyle düzenlemenize yardımcı olan sezgisel bir fotoğraf galerisi temizleme uygulamasıdır. Fotoğraf galerinizi kolayca temizleyin ve sadece en önemli olanları saklayın.',
+                'getting-started': '🚀 Başlarken',
+                'cleanup-mode': '📸 Temizleme Modunuzu Seçin',
+                'cleanup-mode-desc': 'Dört temizleme modundan birini seçin: Son Eklenen fotoğraflar, Eski Fotoğraflar, Sürpriz (rastgele seçim) veya belirli klasörleri temizlemek için Albüm Seç.',
+                'swipe-clean': '👆 Kaydırarak Temizle',
+                'swipe-clean-desc': 'Fotoğraflarınızı hızlıca gözden geçirmek ve düzenlemek için sezgisel kaydırma hareketlerini kullanın. Saklamak için sağa, silmek için sola kaydırın veya daha fazla seçenek için dokunun.',
+                'smart-org': '🎯 Akıllı Organizasyon',
+                'smart-org-desc': 'SnapClean, temizleme kararlarınızı kolaylaştırmak için tekrarlanan fotoğrafları, bulanık görüntüleri ve ekran görüntülerini tanımlamanıza yardımcı olur.',
+                'privacy-first': '🔒 Gizlilik Öncelikli',
+                'privacy-first-desc': 'Tüm fotoğraf işleme cihazınızda yerel olarak gerçekleşir. Fotoğraflarınız, açıkça paylaşmayı seçmediğiniz sürece telefonunuzdan asla çıkmaz.',
+                'faq-title': '❓ Sık Sorulan Sorular',
+                'troubleshooting-title': '🔧 Sorun Giderme',
+                'system-req-title': '📱 Sistem Gereksinimleri',
+                'contact-title': '📞 Destek İletişim',
+                'privacy-terms-title': '📄 Gizlilik ve Şartlar',
+                'back-to-app': '← SnapClean\'a Geri Dön'
+            }
+        };
+
+        let currentLanguage = localStorage.getItem('language') || 'en';
+
+        function updateLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('language', lang);
+            
+            // Update all elements with data-translate attribute
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update active language button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+
+            // Update page direction for Turkish
+            document.documentElement.setAttribute('dir', lang === 'tr' ? 'ltr' : 'ltr');
+            document.documentElement.setAttribute('lang', lang);
+        }
+
+        // Initialize language on page load
+        updateLanguage(currentLanguage);
+
+        // Add click listeners to language buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.getAttribute('data-lang');
+                updateLanguage(lang);
             });
         });
     </script>
