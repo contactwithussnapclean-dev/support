@@ -897,7 +897,7 @@
         </div>
 
         <div class="back-to-app">
-            <a href="index.html"><span data-translate="back-to-app">← Back to SnapClean</span></a>
+            <a href="#" onclick="openSnapCleanApp()"><span data-translate="back-to-app">← Back to SnapClean</span></a>
         </div>
     </div>
 
@@ -1112,6 +1112,35 @@
                 updateLanguage(lang);
             });
         });
+
+        // Function to open SnapClean app
+        function openSnapCleanApp() {
+            // Try to open SnapClean app using custom URL scheme
+            const appUrl = 'snapclean://open';
+            const fallbackUrl = 'https://apps.apple.com/app/snapclean'; // App Store fallback
+            
+            // Create a temporary link to try opening the app
+            const link = document.createElement('a');
+            link.href = appUrl;
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            
+            // Try to open the app
+            try {
+                link.click();
+                
+                // If app doesn't open within 2 seconds, redirect to App Store
+                setTimeout(() => {
+                    window.location.href = fallbackUrl;
+                }, 2000);
+            } catch (error) {
+                // If there's an error, redirect to App Store
+                window.location.href = fallbackUrl;
+            }
+            
+            // Clean up
+            document.body.removeChild(link);
+        }
     </script>
 </body>
 </html>
