@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapClean - Transform Your Photo Gallery | Download Now</title>
+    <meta name="description" content="SnapClean is the ultimate photo gallery cleanup app. Organize thousands of photos with simple swipe gestures. Clean up duplicates, blurry photos, and screenshots instantly. Download free on iOS and Android.">
+    <meta name="keywords" content="photo cleanup, gallery organizer, duplicate photos, photo management, mobile app, iOS, Android, photo organizer">
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://contactwithussnapclean-dev.github.io/support/market.html">
+    <meta property="og:title" content="SnapClean - Transform Your Photo Gallery | Download Now">
+    <meta property="og:description" content="SnapClean is the ultimate photo gallery cleanup app. Organize thousands of photos with simple swipe gestures. Clean up duplicates, blurry photos, and screenshots instantly. Download free on iOS and Android.">
+    <meta property="og:image" content="https://contactwithussnapclean-dev.github.io/support/icons/Icon-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="SnapClean App Icon">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://contactwithussnapclean-dev.github.io/support/market.html">
+    <meta property="twitter:title" content="SnapClean - Transform Your Photo Gallery | Download Now">
+    <meta property="twitter:description" content="SnapClean is the ultimate photo gallery cleanup app. Organize thousands of photos with simple swipe gestures. Clean up duplicates, blurry photos, and screenshots instantly. Download free on iOS and Android.">
+    <meta property="twitter:image" content="https://contactwithussnapclean-dev.github.io/support/icons/Icon-512.png">
+    <meta property="twitter:image:alt" content="SnapClean App Icon">
+    
+    <!-- Additional meta tags -->
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="SnapClean">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+    
+    <!-- App Store Optimization -->
+    <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID">
+    <meta name="google-play-app" content="app-id=YOUR_PACKAGE_NAME">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #FFFFFF;
+            background: linear-gradient(135deg, 
+                rgba(0, 0, 0, 0.95) 0%, 
+                rgba(17, 17, 17, 0.98) 25%, 
+                rgba(31, 31, 31, 0.95) 50%, 
+                rgba(17, 17, 17, 0.98) 75%, 
+                rgba(0, 0, 0, 0.95) 100%);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/images/noise_512.png');
+            background-size: 512px 512px;
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #FFFFFF, #E5E7EB, #9CA3AF, #FFFFFF);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #4ECDC4;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 8px;
+        }
+
+        .lang-btn {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 6px 12px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            min-width: 40px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+        }
+
+        .lang-btn.active {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #FFFFFF, #E5E7EB, #9CA3AF, #FFFFFF);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease-in-out infinite;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(229, 231, 235, 0.1));
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: white;
+            padding: 18px 36px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            border-radius: 16px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(229, 231, 235, 0.2));
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .download-btn:hover::before {
+            opacity: 1;
+        }
+
+        .download-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-video {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: #FFFFFF;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                0 1px 2px rgba(255, 255, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.1) 0%, 
+                rgba(255, 255, 255, 0.05) 50%, 
+                rgba(255, 255, 255, 0.1) 100%);
+            border-radius: 24px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 16px 48px rgba(0, 0, 0, 0.4),
+                0 0 32px rgba(255, 255, 255, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #FFFFFF;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Screenshots Section */
+        .screenshots {
+            padding: 80px 0;
+        }
+
+        .screenshots-carousel {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 24px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .screenshot-image {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 12px 32px rgba(255, 255, 255, 0.2);
+        }
+
+        .carousel-prev {
+            left: 20px;
+        }
+
+        .carousel-next {
+            right: 20px;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #FFFFFF;
+            transform: scale(1.2);
+            box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
+        }
+
+        .dot:hover {
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 30px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+            display: block;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: #4ECDC4;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-rating {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Download Section */
+        .download-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(229, 231, 235, 0.05));
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .download-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .download-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #FFFFFF;
+        }
+
+        .download-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 0 40px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: #FFFFFF;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: #FFFFFF;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-content {
+                padding: 0 15px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .download-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .feature-card {
+                padding: 30px;
+            }
+            
+            .screenshots-carousel {
+                max-width: 100%;
+                margin: 0 10px;
+            }
+            
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            
+            .carousel-prev {
+                left: 10px;
+            }
+            
+            .carousel-next {
+                right: 10px;
+            }
+            
+            .screenshot-image {
+                max-height: 400px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 100px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-video {
+                max-width: 300px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        .loading {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="logo">SnapClean</div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link" data-translate="nav-features">Features</a>
+                <a href="#screenshots" class="nav-link" data-translate="nav-screenshots">Screenshots</a>
+                <a href="#download" class="nav-link" data-translate="nav-download">Download</a>
+                <a href="index.html" class="nav-link" data-translate="nav-support">Support</a>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="tr">TR</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero loading">
+        <div class="container">
+            <div class="hero-content">
+                <video class="hero-video" autoplay muted loop playsinline data-en-src="assets/en/SnapClean - Gallery Cleaner (New iOS App).mp4" data-tr-src="assets/tr/SnapClean - Galeri Temizliği (Yeni iOS uygulaması).mp4" onclick="window.open('https://apps.apple.com/us/app/snapclean-gallery-cleaner/id6752945545', '_blank')" style="cursor: pointer;">
+                    <source src="assets/en/SnapClean - Gallery Cleaner (New iOS App).mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h1 data-translate="hero-title">Transform Your Photo Gallery</h1>
+                <p class="hero-subtitle" data-translate="hero-subtitle">Clean up thousands of photos with simple swipe gestures</p>
+                <p class="hero-description" data-translate="hero-description">
+                    SnapClean makes photo organization effortless. Remove duplicates, blurry photos, and screenshots instantly. 
+                    Your photos stay private - everything happens locally on your device.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://apps.apple.com/us/app/snapclean-gallery-cleaner/id6752945545" target="_blank" class="download-btn">
+                        <span>📱</span>
+                        <span data-translate="download-ios">Download for iOS</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title" data-translate="features-title">Why Choose SnapClean?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">👆</div>
+                    <h3 data-translate="feature-swipe-title">Intuitive Swipe Gestures</h3>
+                    <p data-translate="feature-swipe-desc">Swipe right to keep, left to delete. Clean up your gallery in minutes, not hours. Simple gestures make photo organization effortless and fun.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3 data-translate="feature-smart-title">Smart Detection</h3>
+                    <p data-translate="feature-smart-desc">Automatically identify duplicates, blurry photos, and screenshots. SnapClean helps you make informed decisions about what to keep.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 data-translate="feature-privacy-title">Complete Privacy</h3>
+                    <p data-translate="feature-privacy-desc">All processing happens locally on your device. Your photos never leave your phone unless you choose to share them.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 data-translate="feature-fast-title">Lightning Fast</h3>
+                    <p data-translate="feature-fast-desc">Process thousands of photos in seconds. Optimized algorithms ensure smooth performance even with large photo libraries.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 data-translate="feature-modes-title">Multiple Cleanup Modes</h3>
+                    <p data-translate="feature-modes-desc">Choose from Recently Added, Old Photos, Surprise Me, or Select Album. Find the perfect cleanup strategy for your needs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3 data-translate="feature-storage-title">Free Up Storage</h3>
+                    <p data-translate="feature-storage-desc">Remove unwanted photos to free up precious storage space. Keep your device running smoothly with a clean, organized gallery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="screenshots">
+        <div class="container">
+            <h2 class="section-title" data-translate="screenshots-title">See SnapClean in Action</h2>
+            <div class="screenshots-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="assets/en/1.png" alt="SnapClean Screenshot 1" class="screenshot-image" data-en-src="assets/en/1.png" data-tr-src="assets/tr/1.png">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/en/2.png" alt="SnapClean Screenshot 2" class="screenshot-image" data-en-src="assets/en/2.png" data-tr-src="assets/tr/2.png">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/en/3.png" alt="SnapClean Screenshot 3" class="screenshot-image" data-en-src="assets/en/3.png" data-tr-src="assets/tr/3.png">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/en/4.png" alt="SnapClean Screenshot 4" class="screenshot-image" data-en-src="assets/en/4.png" data-tr-src="assets/tr/4.png">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/en/5.png" alt="SnapClean Screenshot 5" class="screenshot-image" data-en-src="assets/en/5.png" data-tr-src="assets/tr/5.png">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/en/6.png" alt="SnapClean Screenshot 6" class="screenshot-image" data-en-src="assets/en/6.png" data-tr-src="assets/tr/6.png">
+                        </div>
+                    </div>
+                    <button class="carousel-btn carousel-prev" id="prev-btn">‹</button>
+                    <button class="carousel-btn carousel-next" id="next-btn">›</button>
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                    <span class="dot" data-slide="4"></span>
+                    <span class="dot" data-slide="5"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <h2 class="section-title" data-translate="stats-title">Key Features</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label" data-translate="stat-privacy">Privacy Protected</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">iOS</span>
+                    <span class="stat-label" data-translate="stat-platform">Available Now</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">Free</span>
+                    <span class="stat-label" data-translate="stat-price">No Subscription</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">Local</span>
+                    <span class="stat-label" data-translate="stat-processing">Processing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Download Section -->
+    <section id="download" class="download-section">
+        <div class="container">
+            <div class="download-content">
+                <h2 class="download-title" data-translate="download-title">Ready to Clean Up Your Gallery?</h2>
+                <p class="download-subtitle" data-translate="download-subtitle">Download SnapClean today and transform your photo organization experience</p>
+                <div class="cta-buttons">
+                    <a href="https://apps.apple.com/us/app/snapclean-gallery-cleaner/id6752945545" target="_blank" class="download-btn">
+                        <span>📱</span>
+                        <span data-translate="download-ios">Download for iOS</span>
+                    </a>
+                </div>
+                <p style="margin-top: 20px; color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;" data-translate="download-note">
+                    Free to download • No subscription required • Privacy-first design
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-translate="footer-about">About SnapClean</h3>
+                    <p data-translate="footer-about-desc">The ultimate photo gallery cleanup app that helps you organize your memories with simple swipe gestures. Clean up your photo gallery with ease and keep only what matters most.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-translate="footer-features">Features</h3>
+                    <p><a href="#features" data-translate="footer-swipe">Swipe Gestures</a></p>
+                    <p><a href="#features" data-translate="footer-smart">Smart Detection</a></p>
+                    <p><a href="#features" data-translate="footer-privacy">Privacy Protection</a></p>
+                    <p><a href="#features" data-translate="footer-modes">Cleanup Modes</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-translate="footer-support">Support</h3>
+                    <p><a href="index.html" data-translate="footer-help">Help Center</a></p>
+                    <p><a href="privacy.html" data-translate="footer-privacy-policy">Privacy Policy</a></p>
+                    <p><a href="mailto:contactwithus.snapclean@gmail.com" data-translate="footer-contact">Contact Us</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-translate="footer-download">Download</h3>
+                    <p><a href="#" data-translate="footer-ios">iOS App Store</a></p>
+                    <p><a href="#download" data-translate="footer-get-app">Get the App</a></p>
+                    <p><a href="#" data-translate="footer-android-coming">Android Coming Soon</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate="footer-copyright">© 2025 SnapClean. All rights reserved. Made with ❤️ for photo lovers everywhere.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language switching functionality
+        const translations = {
+            en: {
+                'nav-features': 'Features',
+                'nav-screenshots': 'Screenshots',
+                'nav-download': 'Download',
+                'nav-support': 'Support',
+                'hero-title': 'Transform Your Photo Gallery',
+                'hero-subtitle': 'Clean up thousands of photos with simple swipe gestures',
+                'hero-description': 'SnapClean makes photo organization effortless. Remove duplicates, blurry photos, and screenshots instantly. Your photos stay private - everything happens locally on your device.',
+                'download-ios': 'Download for iOS',
+                'features-title': 'Why Choose SnapClean?',
+                'feature-swipe-title': 'Intuitive Swipe Gestures',
+                'feature-swipe-desc': 'Swipe right to keep, left to delete. Clean up your gallery in minutes, not hours. Simple gestures make photo organization effortless and fun.',
+                'feature-smart-title': 'Smart Detection',
+                'feature-smart-desc': 'Automatically identify duplicates, blurry photos, and screenshots. SnapClean helps you make informed decisions about what to keep.',
+                'feature-privacy-title': 'Complete Privacy',
+                'feature-privacy-desc': 'All processing happens locally on your device. Your photos never leave your phone unless you choose to share them.',
+                'feature-fast-title': 'Lightning Fast',
+                'feature-fast-desc': 'Process thousands of photos in seconds. Optimized algorithms ensure smooth performance even with large photo libraries.',
+                'feature-modes-title': 'Multiple Cleanup Modes',
+                'feature-modes-desc': 'Choose from Recently Added, Old Photos, Surprise Me, or Select Album. Find the perfect cleanup strategy for your needs.',
+                'feature-storage-title': 'Free Up Storage',
+                'feature-storage-desc': 'Remove unwanted photos to free up precious storage space. Keep your device running smoothly with a clean, organized gallery.',
+                'screenshots-title': 'See SnapClean in Action',
+                'screenshot-1': 'Choose Your Cleanup Mode',
+                'screenshot-2': 'Intuitive Swipe Gestures',
+                'screenshot-3': 'Smart Photo Analysis',
+                'screenshot-4': 'Cleanup Progress',
+                'screenshot-5': 'Photo Review Interface',
+                'screenshot-6': 'Settings & Preferences',
+                'stats-title': 'Key Features',
+                'stat-privacy': 'Privacy Protected',
+                'stat-platform': 'Available Now',
+                'stat-price': 'No Subscription',
+                'stat-processing': 'Processing',
+                'download-title': 'Ready to Clean Up Your Gallery?',
+                'download-subtitle': 'Download SnapClean today and transform your photo organization experience',
+                'download-note': 'Free to download • No subscription required • Privacy-first design',
+                'footer-about': 'About SnapClean',
+                'footer-about-desc': 'The ultimate photo gallery cleanup app that helps you organize your memories with simple swipe gestures. Clean up your photo gallery with ease and keep only what matters most.',
+                'footer-features': 'Features',
+                'footer-swipe': 'Swipe Gestures',
+                'footer-smart': 'Smart Detection',
+                'footer-privacy': 'Privacy Protection',
+                'footer-modes': 'Cleanup Modes',
+                'footer-support': 'Support',
+                'footer-help': 'Help Center',
+                'footer-privacy-policy': 'Privacy Policy',
+                'footer-contact': 'Contact Us',
+                'footer-download': 'Download',
+                'footer-ios': 'iOS App Store',
+                'footer-android-coming': 'Android Coming Soon',
+                'footer-get-app': 'Get the App',
+                'footer-copyright': '© 2025 SnapClean. All rights reserved. Made with ❤️ for photo lovers everywhere.'
+            },
+            tr: {
+                'nav-features': 'Özellikler',
+                'nav-screenshots': 'Ekran Görüntüleri',
+                'nav-download': 'İndir',
+                'nav-support': 'Destek',
+                'hero-title': 'Fotoğraf Galerinizi Dönüştürün',
+                'hero-subtitle': 'Binlerce fotoğrafı basit kaydırma hareketleriyle temizleyin',
+                'hero-description': 'SnapClean fotoğraf organizasyonunu zahmetsiz hale getirir. Tekrarlanan, bulanık fotoğrafları ve ekran görüntülerini anında kaldırın. Fotoğraflarınız gizli kalır - her şey cihazınızda yerel olarak gerçekleşir.',
+                'download-ios': 'iOS için İndir',
+                'features-title': 'Neden SnapClean?',
+                'feature-swipe-title': 'Sezgisel Kaydırma Hareketleri',
+                'feature-swipe-desc': 'Saklamak için sağa, silmek için sola kaydırın. Galerinizi saatler değil dakikalar içinde temizleyin. Basit hareketler fotoğraf organizasyonunu zahmetsiz ve eğlenceli hale getirir.',
+                'feature-smart-title': 'Akıllı Tespit',
+                'feature-smart-desc': 'Tekrarlanan, bulanık fotoğrafları ve ekran görüntülerini otomatik olarak tanımlayın. SnapClean neyi saklayacağınız konusunda bilinçli kararlar vermenize yardımcı olur.',
+                'feature-privacy-title': 'Tam Gizlilik',
+                'feature-privacy-desc': 'Tüm işlemler cihazınızda yerel olarak gerçekleşir. Fotoğraflarınız paylaşmayı seçmediğiniz sürece telefonunuzdan asla çıkmaz.',
+                'feature-fast-title': 'Şimşek Hızında',
+                'feature-fast-desc': 'Binlerce fotoğrafı saniyeler içinde işleyin. Optimize edilmiş algoritmalar büyük fotoğraf kütüphanelerinde bile sorunsuz performans sağlar.',
+                'feature-modes-title': 'Çoklu Temizleme Modları',
+                'feature-modes-desc': 'Son Eklenen, Eski Fotoğraflar, Sürpriz veya Albüm Seç seçeneklerinden birini seçin. İhtiyaçlarınız için mükemmel temizleme stratejisini bulun.',
+                'feature-storage-title': 'Depolama Alanı Açın',
+                'feature-storage-desc': 'İstenmeyen fotoğrafları kaldırarak değerli depolama alanını serbest bırakın. Temiz, düzenli bir galeri ile cihazınızın sorunsuz çalışmasını sağlayın.',
+                'screenshots-title': 'SnapClean\'i Aksiyonda Görün',
+                'screenshot-1': 'Temizleme Modunuzu Seçin',
+                'screenshot-2': 'Sezgisel Kaydırma Hareketleri',
+                'screenshot-3': 'Akıllı Fotoğraf Analizi',
+                'screenshot-4': 'Temizleme İlerlemesi',
+                'screenshot-5': 'Fotoğraf İnceleme Arayüzü',
+                'screenshot-6': 'Ayarlar ve Tercihler',
+                'stats-title': 'Temel Özellikler',
+                'stat-privacy': 'Gizlilik Korumalı',
+                'stat-platform': 'Şimdi Mevcut',
+                'stat-price': 'Abonelik Yok',
+                'stat-processing': 'İşleme',
+                'download-title': 'Galerinizi Temizlemeye Hazır mısınız?',
+                'download-subtitle': 'SnapClean\'i bugün indirin ve fotoğraf organizasyon deneyiminizi dönüştürün',
+                'download-note': 'Ücretsiz indirme • Abonelik gerekmez • Gizlilik odaklı tasarım',
+                'footer-about': 'SnapClean Hakkında',
+                'footer-about-desc': 'Anılarınızı basit kaydırma hareketleriyle düzenlemenize yardımcı olan nihai fotoğraf galerisi temizleme uygulaması. Fotoğraf galerinizi kolayca temizleyin ve sadece en önemli olanları saklayın.',
+                'footer-features': 'Özellikler',
+                'footer-swipe': 'Kaydırma Hareketleri',
+                'footer-smart': 'Akıllı Tespit',
+                'footer-privacy': 'Gizlilik Koruması',
+                'footer-modes': 'Temizleme Modları',
+                'footer-support': 'Destek',
+                'footer-help': 'Yardım Merkezi',
+                'footer-privacy-policy': 'Gizlilik Politikası',
+                'footer-contact': 'İletişim',
+                'footer-download': 'İndir',
+                'footer-ios': 'iOS App Store',
+                'footer-android-coming': 'Android Yakında',
+                'footer-get-app': 'Uygulamayı Al',
+                'footer-copyright': '© 2025 SnapClean. Tüm hakları saklıdır. Her yerdeki fotoğraf severler için ❤️ ile yapılmıştır.'
+            }
+        };
+
+        let currentLanguage = localStorage.getItem('language') || 'en';
+
+        function updateLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('language', lang);
+            
+            // Update all elements with data-translate attribute
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update screenshot images based on language
+            document.querySelectorAll('.screenshot-image').forEach(img => {
+                const enSrc = img.getAttribute('data-en-src');
+                const trSrc = img.getAttribute('data-tr-src');
+                if (lang === 'tr' && trSrc) {
+                    img.src = trSrc;
+                } else if (lang === 'en' && enSrc) {
+                    img.src = enSrc;
+                }
+            });
+
+            // Update hero video based on language
+            const heroVideo = document.querySelector('.hero-video');
+            if (heroVideo) {
+                const enSrc = heroVideo.getAttribute('data-en-src');
+                const trSrc = heroVideo.getAttribute('data-tr-src');
+                const currentTime = heroVideo.currentTime;
+                const isPaused = heroVideo.paused;
+                
+                if (lang === 'tr' && trSrc) {
+                    heroVideo.src = trSrc;
+                } else if (lang === 'en' && enSrc) {
+                    heroVideo.src = enSrc;
+                }
+                
+                // Restore video state
+                heroVideo.currentTime = currentTime;
+                if (!isPaused) {
+                    heroVideo.play();
+                }
+            }
+
+            // Update active language button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+
+            // Update page direction for Turkish
+            document.documentElement.setAttribute('dir', lang === 'tr' ? 'ltr' : 'ltr');
+            document.documentElement.setAttribute('lang', lang);
+        }
+
+        // Initialize language on page load
+        updateLanguage(currentLanguage);
+
+        // Add click listeners to language buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.getAttribute('data-lang');
+                updateLanguage(lang);
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.loading').forEach(element => {
+                element.style.opacity = '1';
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(0, 0, 0, 0.9)';
+            } else {
+                nav.style.background = 'rgba(0, 0, 0, 0.8)';
+            }
+        });
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const totalSlides = 6;
+        const track = document.getElementById('carousel-track');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        function updateCarousel() {
+            const translateX = -currentSlide * 100;
+            track.style.transform = `translateX(${translateX}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        // Event listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+            });
+        });
+
+        // Touch/swipe support
+        let startX = 0;
+        let endX = 0;
+
+        track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        track.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const threshold = 50;
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+            }
+        });
+
+        // Auto-play (optional - uncomment if desired)
+        // setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>

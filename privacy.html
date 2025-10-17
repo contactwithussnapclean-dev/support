@@ -42,7 +42,12 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #FFFFFF;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(26, 26, 26, 0.95) 50%, rgba(0, 0, 0, 0.9) 100%);
+            background: linear-gradient(135deg, 
+                rgba(0, 0, 0, 0.95) 0%, 
+                rgba(17, 17, 17, 0.98) 25%, 
+                rgba(31, 31, 31, 0.95) 50%, 
+                rgba(17, 17, 17, 0.98) 75%, 
+                rgba(0, 0, 0, 0.95) 100%);
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -89,61 +94,40 @@
         }
 
         .lang-btn {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             color: white;
             border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 6px 12px;
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
             font-size: 0.8rem;
             font-weight: 500;
             transition: all 0.3s ease;
             text-decoration: none;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         }
 
         .lang-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
             transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
         }
 
         .lang-btn.active {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
         }
 
-        .back-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            z-index: 1000;
-        }
-
-        .back-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-1px);
-        }
 
         .logo {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 10px;
-            background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #96CEB4);
+            background: linear-gradient(45deg, #FFFFFF, #E5E7EB, #9CA3AF, #FFFFFF);
             background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -163,14 +147,17 @@
         }
 
         .content-section {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 16px;
             padding: 30px;
             margin-bottom: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.4),
+                0 1px 2px rgba(255, 255, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
         .content-section h1 {
@@ -183,15 +170,15 @@
         .content-section h2 {
             font-size: 1.5rem;
             margin: 25px 0 15px 0;
-            color: #4ECDC4;
-            border-bottom: 2px solid rgba(78, 205, 196, 0.3);
+            color: #FFFFFF;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
             padding-bottom: 8px;
         }
 
         .content-section h3 {
             font-size: 1.2rem;
             margin: 20px 0 10px 0;
-            color: #96CEB4;
+            color: #E5E7EB;
         }
 
         .content-section p {
@@ -220,15 +207,15 @@
         }
 
         .contact-info {
-            background: rgba(78, 205, 196, 0.1);
-            border: 1px solid rgba(78, 205, 196, 0.3);
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 12px;
             padding: 20px;
             margin-top: 20px;
         }
 
         .contact-info h3 {
-            color: #4ECDC4;
+            color: #FFFFFF;
             margin-bottom: 10px;
         }
 
@@ -237,19 +224,19 @@
         }
 
         .email-link {
-            color: #4ECDC4;
+            color: #FFFFFF;
             text-decoration: none;
             font-weight: 500;
         }
 
         .email-link:hover {
-            color: #96CEB4;
+            color: #E5E7EB;
             text-decoration: underline;
         }
 
         .divider {
             height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(78, 205, 196, 0.5), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             margin: 40px 0;
             border: none;
         }
@@ -292,18 +279,10 @@
                 right: 15px;
             }
             
-            .back-btn {
-                top: 15px;
-                left: 15px;
-                padding: 6px 12px;
-                font-size: 0.8rem;
-            }
         }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-btn">← Back to Support</a>
-    
     <div class="language-switcher">
         <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
         <button class="lang-btn" onclick="switchLanguage('tr')">TR</button>
